@@ -16,8 +16,17 @@ namespace TN01___WFCadastroContato
         {
             InitializeComponent();
         }
+        public void LimparFormulario()
+        {
+            txtNome.Clear();
+            txtSobrenome.Clear();
+            txtEmail.Clear();
+            mkdTelefone.Clear();
+            rdbComercial.Checked = false;
+            rdbPessoal.Checked = false;
+            rdbRecado.Checked = false;
+        }
 
-        
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string Nome = txtNome.Text;
@@ -25,12 +34,12 @@ namespace TN01___WFCadastroContato
             if (Nome == "")
             {
                 MessageBox.Show("Falta preencher o nome!");
+                return;
             }
 
             else
             {
                 Nome = txtNome.Text;
-                return;
             }
 
             string Sobrenome = txtSobrenome.Text;
@@ -38,47 +47,47 @@ namespace TN01___WFCadastroContato
             if (Sobrenome == "")
             {
                 MessageBox.Show("Falta preencher o sobrenome!");
+                return;
             }
             else
             {
-                Sobrenome = txtSobrenome.Text;
-                return;
+                Sobrenome = txtSobrenome.Text;                
             }
             string DddTelefone = mkdTelefone.Text;
 
             if (DddTelefone == "")
             {
                 MessageBox.Show("Falta preencher o telefone!");
+                return;
             }
             else
             {
-                DddTelefone = mkdTelefone.Text;
-                return;
+                DddTelefone = mkdTelefone.Text;                
             }
             string Email = txtEmail.Text;
 
             if (Email == "")
             {
                 MessageBox.Show("Falta preencher o e-mail!");
+                return;
             }
             else
             {
-                Email = txtEmail.Text;
-                return;
+                Email = txtEmail.Text;               
             }
-            char TipoTelefone;
+            ETipoTelefone tipoTelefone;
 
             if (rdbPessoal.Checked)
             {
-                TipoTelefone = 'P';
+                tipoTelefone = ETipoTelefone.Pessoal;
             }
             else if (rdbComercial.Checked)
             {
-                TipoTelefone = 'C';
+                tipoTelefone = ETipoTelefone.Comercial;
             }
             else if (rdbRecado.Checked)
             {
-                TipoTelefone = 'R';
+                tipoTelefone = ETipoTelefone.Recado;
             }
             else
             {
@@ -86,6 +95,24 @@ namespace TN01___WFCadastroContato
                 return;
             }
 
+            //Jeito 1 (Retirando as máscaras do maskedTextBox)
+            //string dddTelefone =
+            //    "(" + mtbDddTelefone.Text.Substring(0, 2) + ") "
+            //    + mtbDddTelefone.Text.Substring(2, 5) + "-"
+            //    + mtbDddTelefone.Text.Substring(7);
+
+            Contato c1 = new Contato();
+            c1.Nome = txtNome.Text;
+            c1.Email = txtEmail.Text;
+            c1.Sobrenome = txtSobrenome.Text;
+            c1.Codigo = 0;
+            c1.TipoTelefone = tipoTelefone;
+            c1.Ddd = mkdTelefone.Text.Substring(1, 2);
+            c1.Telefone = mkdTelefone.Text.Substring(4);
+
+            Contato.ListaContatos.Add(c1);
+
+           
             MessageBox.Show("Cadastro realizado com sucesso!", "Info",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -217,7 +217,11 @@
             Controls.Add(lblSobrenome);
             Controls.Add(txtNome);
             Controls.Add(lblNome);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormCadastrarContato";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastrar Contato";
             gbxTipoTelefone.ResumeLayout(false);
             gbxTipoTelefone.PerformLayout();

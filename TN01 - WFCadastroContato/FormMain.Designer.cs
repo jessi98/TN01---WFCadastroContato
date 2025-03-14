@@ -34,13 +34,14 @@
             mnsSobre = new ToolStripMenuItem();
             mnsSair = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
+            mnsListagem = new ToolStripMenuItem();
             msnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // msnMenu
             // 
-            msnMenu.Items.AddRange(new ToolStripItem[] { mnsCadastrar, mnsSobre, mnsSair });
+            msnMenu.Items.AddRange(new ToolStripItem[] { mnsCadastrar, mnsSobre, mnsListagem, mnsSair });
             msnMenu.Location = new Point(0, 0);
             msnMenu.Name = "msnMenu";
             msnMenu.Size = new Size(422, 24);
@@ -69,14 +70,22 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(0, 27);
+            pictureBox1.Location = new Point(0, 24);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(422, 258);
+            pictureBox1.Size = new Size(422, 264);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            // 
+            // mnsListagem
+            // 
+            mnsListagem.Name = "mnsListagem";
+            mnsListagem.Size = new Size(67, 20);
+            mnsListagem.Text = "Listagem";
+            mnsListagem.Click += mnsListagem_Click;
             // 
             // FormMain
             // 
@@ -86,8 +95,12 @@
             ClientSize = new Size(422, 288);
             Controls.Add(pictureBox1);
             Controls.Add(msnMenu);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = msnMenu;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
             msnMenu.ResumeLayout(false);
             msnMenu.PerformLayout();
@@ -103,5 +116,6 @@
         private ToolStripMenuItem mnsSobre;
         private ToolStripMenuItem mnsSair;
         private PictureBox pictureBox1;
+        private ToolStripMenuItem mnsListagem;
     }
 }
