@@ -32,9 +32,9 @@
             msnMenu = new MenuStrip();
             mnsCadastrar = new ToolStripMenuItem();
             mnsSobre = new ToolStripMenuItem();
+            mnsListagem = new ToolStripMenuItem();
             mnsSair = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
-            mnsListagem = new ToolStripMenuItem();
             msnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -61,6 +61,13 @@
             mnsSobre.Size = new Size(49, 20);
             mnsSobre.Text = "Sobre";
             // 
+            // mnsListagem
+            // 
+            mnsListagem.Name = "mnsListagem";
+            mnsListagem.Size = new Size(67, 20);
+            mnsListagem.Text = "Listagem";
+            mnsListagem.Click += mnsListagem_Click;
+            // 
             // mnsSair
             // 
             mnsSair.Name = "mnsSair";
@@ -80,13 +87,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // mnsListagem
-            // 
-            mnsListagem.Name = "mnsListagem";
-            mnsListagem.Size = new Size(67, 20);
-            mnsListagem.Text = "Listagem";
-            mnsListagem.Click += mnsListagem_Click;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -102,6 +102,7 @@
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
+            Load += FormMain_Load;
             msnMenu.ResumeLayout(false);
             msnMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
