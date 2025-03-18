@@ -36,9 +36,9 @@
             // 
             dgvListaContatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListaContatos.Dock = DockStyle.Bottom;
-            dgvListaContatos.Location = new Point(0, 13);
+            dgvListaContatos.Location = new Point(0, 40);
             dgvListaContatos.Name = "dgvListaContatos";
-            dgvListaContatos.Size = new Size(477, 302);
+            dgvListaContatos.Size = new Size(477, 275);
             dgvListaContatos.TabIndex = 0;
             // 
             // FormListagem

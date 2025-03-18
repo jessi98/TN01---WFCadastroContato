@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TN01___WFCadastroContato
+namespace WFUsandoListagem2
 {
     public partial class FormListagem : Form
     {
@@ -19,8 +19,7 @@ namespace TN01___WFCadastroContato
 
         private void FormListagem_Load(object sender, EventArgs e)
         {
-            dgvListaContatos.DataSource = Contato.ListaContatos;
+            dgvListagemUsuarios.DataSource = Usuario.ListaUsuarios;
         }
-
     }
 }

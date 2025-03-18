@@ -102,7 +102,6 @@
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
-            Load += FormMain_Load;
             msnMenu.ResumeLayout(false);
             msnMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

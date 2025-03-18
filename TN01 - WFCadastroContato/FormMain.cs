@@ -72,9 +72,5 @@ namespace TN01___WFCadastroContato
 
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
